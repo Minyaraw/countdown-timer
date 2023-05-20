@@ -77,7 +77,9 @@ function format(item) {
   items.forEach(function(item, index) {
 item.innerHTML =  format(values[index]);
   });
+  if(t<0)
 }
 // countdown
 let countdown = setInterval(getRemainingTime,1000);
+
   getRemainingTime();
