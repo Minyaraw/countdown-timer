@@ -26,7 +26,7 @@ const months = [
   const deadline = document.querySelector(".deadline");
   const items = document.querySelectorAll(".deadline-format h4");
   
-  let futureDate = new Date(2020 ,3, 24, 15, 30, 0);
+  let futureDate = new Date(2020 ,3, 24, 11, 0, 0);
 
   const year = futureDate.getFullYear();
   const hours = futureDate.getHours();
@@ -77,7 +77,11 @@ function format(item) {
   items.forEach(function(item, index) {
 item.innerHTML =  format(values[index]);
   });
-  if(t<0)
+  if(t< 0){
+    clearInterval(countdown);
+    deadline.innerHTML = `<h4 class="expired">sorry, this 
+    giveaway has expired</h4`;
+  }
 }
 // countdown
 let countdown = setInterval(getRemainingTime,1000);
